@@ -1,0 +1,148 @@
+﻿@{
+    Layout = null;
+}
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-plus"></i>Thêm sản phẩm
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+            <a href="javascript:;" class="remove" control-relation="lnkRemoveListProduct"></a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form action="#" id="frmCreateProduct" class="form-horizontal">
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label">
+                            Mã Sp<span class="required">*</span>
+                        </label>
+                        <div class="controls">
+                            <input id="txtCode" type="text" class="span12 m-wrap " placeholder="Mã sản phẩm" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label">
+                            Tên sản phẩm<span class="required">*</span>
+                        </label>
+                        <div class="controls">
+                            <input id="txtName" type="text" class="span12 m-wrap " placeholder="Tên sản phẩm" />
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label">
+                            Nhóm sp<span class="required">*</span>
+                        </label>
+                        <div class="controls">
+                            <select id="ddlCategory" type="text" class="span12 m-wrap ">
+                                <option value="0">--Chọn nhóm sp--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label">
+                            Ảnh<span class="required">*</span>
+                        </label>
+                        <div class="controls">
+                            <input id="txtImage" type="text" class="span9 m-wrap" placeholder="Chọn ảnh" />
+                            <a href="#" class="btn blue" id="btnSelectImage">
+                                    Chọn ảnh
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label">
+                            Mức giá<span class="required">*</span>
+                        </label>
+                        <div class="controls">
+                            <input id="txtPrice" type="text" class="span12 m-wrap " placeholder="Mức giá" />
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label">
+                            Khuyến mại
+                        </label>
+                        <div class="controls">
+                            <input type="text" id="txtPromotion" class="span12 m-wrap" placeholder="Khuyến mại" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label">
+                            Từ khóa<span class="required">*</span>
+                        </label>
+                        <div class="controls">
+                            <input id="txtMetaKeyword" type="text" class="span12 m-wrap " placeholder="Từ khóa tìm kiếm" />
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <label class="control-label">
+                            Mô tả <span class="required">*</span>
+                        </label>
+                        <div class="controls">
+                            <textarea id="txtDescription" name="txtDescription" rows="3" class="span12 m-wrap" placeholder="Mô tả" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group" id="divStatus">
+                        <label class="control-label">Trạng thái</label>
+                        <div class="controls">
+                            <label class="radio">
+                                <input type="radio" name="optionStatus" value="1" checked />
+                                Còn hàng
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="optionStatus" value="0" />
+                                Không còn hàng
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="form-actions">
+                @Html.Hidden("hidId", 0)
+                <button type="button" class="btn blue" id="btnSaveProduct">
+                    <i class="icon-save" />
+                    Lưu
+                </button>
+                <button type="button" id="btnResetProductInput" class="btn blue">
+                    <i class="icon-refresh" />
+                    Làm lại
+                </button>
+                <button type="button" name="btnBackToListProduct" class="btn blue">
+                    <i class="icon-remove" />
+                    Đóng
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model List<Model.User>
+@{
+    Layout = null;
+    //var pager = (Model.Pager)ViewBag.Pager;
+    //pager.ActionScript = "user_index.search";
+    var count = 0;
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="w20">#</th>
+            <th class="span2">Tài khoản</th>
+            <th class="hidden-480">Họ tên</th>
+            <th>SĐT</th>
+            <th class="hidden-480">Email</th>
+            <th class="hidden-480">Địa chỉ</th>
+            <th class="w80"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@m.UserName</td>
+                <td class="hidden-480">@m.FullName</td>
+                <td >@m.Phone</td>
+                <td class="hidden-480">@m.Email</td>
+                <td class="hidden-480">@m.Address</td>
+                <td>
+                    <div class="btn-group none-bottom">
+                        <button class="btn blue mini dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-cog"></i>
+                            Quản lý
+                            <i class="icon-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+
+                            <li>
+                                <a name="btnEditUser" uid="@m.Id">
+                                    <i class="icon-edit"></i>
+                                    Sửa
+                                </a>
+                            </li>
+
+                            <li>
+                                <a name="btnDeleteUser" uid="@m.Id">
+                                    <i class="icon-trash"></i>
+                                    Xóa
+                                </a>
+                            </li>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

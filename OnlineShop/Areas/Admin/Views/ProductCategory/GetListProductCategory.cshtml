@@ -1,0 +1,81 @@
+﻿@model List<Model.ProductCategory>
+@{
+    Layout = null;
+    //var pager = (Model.Pager)ViewBag.Pager;
+    //pager.ActionScript = "user_index.search";
+    var count = 0;
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="w20">#</th>
+            <th class="span2">Tên nhóm SP</th>
+            <th>Nhóm cha</th>
+            <th>Thứ tự</th>
+            <th class="hidden-480">Keyword</th>
+            <th>Trạng thái</th>
+            <th class="hidden-480">Hiển thị ở trang chủ</th>
+            <th class="w80"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@m.Name</td>
+                <td >@m.ParentId</td>
+                <td>@m.DisplayOrder</td>
+                <td class="hidden-480">@m.MetaKeyword</td>
+                <td>
+                    @switch (m.Status)
+                    {
+                        case true:
+                            <span class="label label-success">Hoạt động</span>
+                            break;
+
+                        case false:
+                        <span class="label label-important">Khóa</span>
+                            break;
+                    }
+                </td>
+                <td class="hidden-480">
+                    @switch (m.ShowOnHome)
+                    {
+                        case true:
+                            <span class="label label-success">Hiển thị</span>
+                            break;
+
+                        case false:
+                        <span class="label label-important">Không</span>
+                            break;
+                    }
+                </td>
+                <td>
+                    <div class="btn-group none-bottom">
+                        <button class="btn blue mini dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-cog"></i>
+                            Quản lý
+                            <i class="icon-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+
+                            <li>
+                                <a name="btnEditProductCategory" pcid="@m.Id">
+                                    <i class="icon-edit"></i>
+                                    Sửa
+                                </a>
+                            </li>
+
+                            <li>
+                                <a name="btnDeleteProductCategory" pcid="@m.Id">
+                                    <i class="icon-trash"></i>
+                                    Xóa
+                                </a>
+                            </li>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

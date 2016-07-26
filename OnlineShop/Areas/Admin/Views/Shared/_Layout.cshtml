@@ -1,0 +1,139 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+ <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>Metronic | Admin Dashboard Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="~/assets/Admin/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/Admin/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/Admin/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/Admin/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/Admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/Admin/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/Admin/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="~/assets/Admin/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/Admin/css/themes/default.css" rel="stylesheet" />
+    <link href="~/assets/Admin/plugins/jquery-ui/jquery-ui-1.10.1.custom.css" rel="stylesheet" />
+    <link href="~/assets/Admin/css/common.css" rel="stylesheet" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="fixed-top">
+    <!-- BEGIN HEADER -->
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+        <!-- BEGIN TOP NAVIGATION BAR -->
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <!-- BEGIN LOGO -->
+                <a class="brand" href="index.html">
+                    <img src="~/assets/Admin/img/logo.png" alt="logo" />
+                </a>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                    <img src="~/assets/Admin/img/menu-toggler.png" alt="" />
+                </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <ul class="nav pull-right">
+                    <!-- BEGIN USER LOGIN DROPDOWN -->
+                    <li class="dropdown user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img alt="" src="~/assets/Admin/img/avatar1_small.jpg" />
+                            <span class="username">Bob Nilson</span>
+                            <i class="icon-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Admin/User/LogOut"><i class="icon-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- END USER LOGIN DROPDOWN -->
+                </ul>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar nav-collapse collapse" id="divLeftMenu">
+            @RenderPage("_LeftMenu.cshtml")
+        </div>
+        <!-- END SIDEBAR -->
+        <!-- BEGIN PAGE -->
+        <div class="page-content">
+            <div class="row-fluid">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+        2013 &copy; Metronic by keenthemes.
+        <div class="span pull-right">
+            <span class="go-top"><i class="icon-angle-up"></i></span>
+        </div>
+    </div>
+    @RenderPage("/Views/Common/Dialogs.cshtml")
+    <!-- END FOOTER -->
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="~/assets/Admin/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <script src="~/assets/Admin/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/excanvas.js"></script>
+    <script src="assets/plugins/respond.js"></script>
+    <![endif]-->
+    <script src="~/assets/Admin/plugins/breakpoints/breakpoints.js" type="text/javascript"></script>
+    <!-- IMPORTANT! jquery.slimscroll.min.js depends on jquery-ui-1.10.1.custom.min.js -->
+    <script src="~/assets/Admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/plugins/jquery.blockui.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/plugins/jquery.cookie.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="~/assets/Admin/plugins/bootstrap-daterangepicker/date.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/plugins/gritter/js/jquery.gritter.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/scripts/ui-jqueryui.js"></script>
+    <script src="~/assets/Admin/scripts/plugin/ckfinder/ckfinder.js"></script>
+    <script src="~/assets/Admin/scripts/plugin/ckeditor/ckeditor.js"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="~/assets/Admin/scripts/app.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/scripts/index.js" type="text/javascript"></script>
+    <script src="~/assets/Admin/scripts/View/dialogs.js"></script>
+    <script src="~/assets/Admin/scripts/onlineshop.library.js"></script>
+    <script src="~/assets/Admin/scripts/View/menu.js"></script>
+    <script src="~/assets/Admin/scripts/View/user.js"></script>
+    <script src="~/assets/Admin/scripts/View/ProductCategory.js"></script>
+    <script src="~/assets/Admin/scripts/View/product.js"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+   
+    @RenderSection("Script", false)
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

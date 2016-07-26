@@ -1,0 +1,78 @@
+﻿@model OnlineShop.Areas.Admin.Models.ProductIndexModel
+@{
+    Layout = null;
+    //var pager = (Model.Pager)ViewBag.Pager;
+    //pager.ActionScript = "user_index.search";
+    var count = 0;
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="w20">#</th>
+            <th class="span2">Tên SP</th>
+            <th class="span2">Ảnh</th>
+            <th>Nhóm SP</th>
+            <th>Mức giá</th>
+            <th class="hidden-480">Mô tả</th>
+            <th>Số lượng</th>
+            <th>Trạng thái</th>
+            <th>Hot</th>
+            <th class="w80"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.ListProduct)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@m.Name</td>
+                <td></td>
+                <td>@m.CategoryId</td>
+                <td class="hidden-480">@m.Price</td>
+                <td>@m.Quantity</td>
+                <td>
+                    @switch (m.Status)
+                    {
+                        case true:
+                            <span class="label label-success">Còn hàng</span>
+                            break;
+
+                        case false:
+                        <span class="label label-important">Không còn hàng</span>
+                            break;
+                    }
+                </td>
+                <td class="hidden-480">
+
+                </td>
+                <td></td>
+                <td>
+                    <div class="btn-group none-bottom">
+                        <button class="btn blue mini dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-cog"></i>
+                            Quản lý
+                            <i class="icon-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+
+                            <li>
+                                <a name="btnEditProduct" pid="@m.Id">
+                                    <i class="icon-edit"></i>
+                                    Sửa
+                                </a>
+                            </li>
+
+                            <li>
+                                <a name="btnDeleteProductCategory" pid="@m.Id">
+                                    <i class="icon-trash"></i>
+                                    Xóa
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

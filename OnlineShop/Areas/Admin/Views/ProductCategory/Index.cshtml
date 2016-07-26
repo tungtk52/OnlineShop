@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+<div class="row-fluid">
+    <h3 class="page-title">
+        Quản lý nhóm sản phẩm <small>Quản lý, thêm mới, thay đổi các thông tin liên quan đến nhóm sản phẩm</small>
+    </h3>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>
+            <a href="/">Trang chủ</a>
+            <i class="icon-angle-right"></i>
+        </li>
+        <li><a href="#">Danh sách nhóm sản phẩm</a> </li>
+    </ul>
+</div>
+<div class="row-fluid" id="divbodyProductCategory">
+    <div class="row-fluid" id="wapListProductCategory">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-reorder"></i>Danh sách nhóm sản phẩm
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove" id="lnkRemoveListProductCategory"></a>
+                </div>
+            </div>
+            <div class="portlet-body forget-form" id="listProductCategory">
+                <div class="clearfix">
+                    <div class="btn-group pull-right">
+                        <button type="button" id="btnAddNew" class="btn blue">
+                            <i class="icon-plus"></i>
+                            Thêm mới
+                        </button>
+                    </div>
+                </div>
+                <div class="row-fluid" id="divListProductCategory">
+                    @Html.Action("GetListProductCategory", "ProductCategory")
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid hide" id="divAddNewProductCategory">
+        @Html.Action("Create", "ProductCategory")
+    </div>
+</div>
+<script type="text/javascript" language="javascript">
+    App.initPortletTools();
+    App.initUniform();
+    product_category.init();
+</script>
