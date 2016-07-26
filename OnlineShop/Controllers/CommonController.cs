@@ -13,6 +13,7 @@ namespace OnlineShop.Controllers
         // GET: /Common/
         public ActionResult Paging(Pager pager)
         {
+
             return View(pager);
         }
 
